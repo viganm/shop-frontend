@@ -1,4 +1,5 @@
 import ItemContainer from "./components/items/ItemContainer";
+import Navbar from "./components/UI/Navbar";
 
 function App() {
   const items = [
@@ -30,6 +31,7 @@ function App() {
   ];
   return (
     <div>
+      <Navbar />
       <ItemContainer items={items} />
     </div>
   );

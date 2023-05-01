@@ -1,0 +1,60 @@
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 2rem;
+  font-size: 1.2rem;
+}
+
+.navbar ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar button {
+  background-color: #7a7979;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.login {
+  background-color: #7a7979;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #616060;
+}
+
+.login {
+  background-color: #616060;
+}
+
+.shopping-card {
+  margin-right: 2px;
+}
