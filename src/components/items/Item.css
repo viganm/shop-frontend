@@ -1,0 +1,63 @@
+/* Apple-style CSS for item component */
+
+.item {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 30vh;
+  font-family: "Helvetica Neue", sans-serif;
+  min-width: 250px;
+  min-height: 250px;
+  border-radius: 15px;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  height: 30vh;
+  width: 30vh;
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.item__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.item__description h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.item__price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #007aff;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0061ff;
+}

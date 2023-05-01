@@ -1,0 +1,52 @@
+/* Apple-style CSS for item container component with horizontal layout */
+
+.expenses {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex-basis: 23%;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1500px) {
+  .expenses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .expenses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+  }
+
+  .item {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 844px) {
+  .expenses {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    padding: 0;
+    justify-content: space-evenly;
+  }
+
+  .item {
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+}
