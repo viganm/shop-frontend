@@ -6,17 +6,20 @@ import Navbar from "./components/UI/Navbar";
 function App() {
   const [items, setItems] = useState([]);
 
+  const getProducts = async () => {
+    const res = await fetch("http://localhost:3001/products");
+    let items = await res.json();
+    setItems(items.products);
+  };
+
   useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((response) => response.json())
-      .then((data) => setItems(data));
+    getProducts();
   }, []);
 
-  console.log([items]);
   return (
     <div>
       <Navbar />
-      <ItemContainer products={[items]} />
+      <ItemContainer products={items} />
     </div>
   );
 }
