@@ -9,6 +9,11 @@
   font-family: "Helvetica Neue", sans-serif;
 }
 
+.navbar > div {
+  display: flex;
+  align-items: center;
+}
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -51,10 +56,13 @@
   background-color: #616060;
 }
 
-.login {
-  background-color: #616060;
-}
-
 .shopping-card {
-  margin-right: 2px;
+  background-color: #7a7979;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 50px;
 }

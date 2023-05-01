@@ -3,22 +3,22 @@ import "./Item.css";
 
 import Card from "../UI/Card";
 
-const item = (props) => {
-  const clicktHandler = () => {
+const Item = (props) => {
+  const clickHandler = () => {
     console.log("BUY");
   };
 
   return (
-    <div className="item">
+    <div className="item" key={props.product_id}>
       <Card className="item-card">
         <div className="item__description">
-          <h2>{props.title}</h2>
-          <div className="item__price">${props.amount}</div>
+          <h2>{props.product_name}</h2>
+          <div className="item__price">${props.product_price}</div>
         </div>
-        <button onClick={clicktHandler}>Buy</button>
+        <button onClick={clickHandler}>Buy</button>
       </Card>
     </div>
   );
 };
 
-export default item;
+export default Item;

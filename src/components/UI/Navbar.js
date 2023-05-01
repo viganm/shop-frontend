@@ -8,11 +8,13 @@ const Navbar = () => {
         <button>Home</button>
         <button>Shop</button>
         <button>About</button>
+      </ul>
+      <div>
+        <button className="login">Login</button>
         <button className="shopping-card">
           <i className="fas fa-shopping-cart"></i>
         </button>
-      </ul>
-      <button className="login">Login</button>
+      </div>
     </div>
   );
 };
