@@ -5,14 +5,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <ul>
-        <button>Home</button>
-        <button>Shop</button>
-        <button>About</button>
+        <button to="/">Home</button>
+        <button to="/shop">Shop</button>
+        <button to="/about">About</button>
       </ul>
       <div>
-        <button className="login">Login</button>
         <button className="shopping-card">
           <i className="fas fa-shopping-cart"></i>
+        </button>
+        <button to="/login" className="login">
+          Login
         </button>
       </div>
     </div>
