@@ -1,9 +1,7 @@
-/* Apple-style CSS for item container component with horizontal layout */
-
 .expenses {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 100%;
   font-family: "Helvetica Neue", sans-serif;
@@ -20,7 +18,7 @@
   .expenses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: space-evenly;
+    justify-content: senter;
   }
 }
 
@@ -46,6 +44,8 @@
   }
 
   .item {
+    width: 80%;
+    height: 100%;
     flex-basis: 100%;
     margin-bottom: 2rem;
   }

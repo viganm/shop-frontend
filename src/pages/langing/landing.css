@@ -54,3 +54,7 @@ a {
     width: 300%;
   }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
