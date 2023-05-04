@@ -1,4 +1,4 @@
-import backgroundImage from "../../img/DSC_5125.jpg";
+import backgroundImage from "../../img/DSC_5125.jpeg";
 import "./Landing.css";
 
 const Landing = () => {

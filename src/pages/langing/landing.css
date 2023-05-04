@@ -41,3 +41,16 @@ a {
   align-items: center;
   height: 100%;
 }
+
+@media screen and (max-width: 844px) {
+  .landing_page button {
+    height: 100%;
+    width: 200%;
+    font-size: 150%;
+  }
+
+  .landing_page button:hover {
+    height: 200%;
+    width: 300%;
+  }
+}
