@@ -9,12 +9,7 @@
   font-family: "Helvetica Neue", sans-serif;
 }
 
-.navbar > div {
-  display: flex;
-  align-items: center;
-}
-
-.navbar ul {
+.nav-links {
   list-style: none;
   display: flex;
   align-items: center;
@@ -22,47 +17,44 @@
   padding: 0;
 }
 
-.navbar ul li {
+.nav-links li {
   margin-right: 2rem;
   font-size: 1.2rem;
 }
 
-.navbar ul li:last-child {
+.nav-links li:last-child {
   margin-right: 0;
 }
 
-.navbar button {
-  background-color: #7a7979;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
+.nav-links a {
+  color: #7a7979;
+  text-decoration: none;
   font-size: 1.2rem;
-  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  color: #7a7979;
+  font-size: 1.5rem;
   margin-right: 1rem;
 }
 
-.login {
-  background-color: #7a7979;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+.nav-button {
+  color: #7a7979;
+  text-decoration: none;
   font-size: 1.2rem;
-  cursor: pointer;
+  font-weight: bold;
 }
 
-.navbar button:hover {
-  background-color: #616060;
-}
-
-.shopping-card {
-  background-color: #7a7979;
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-right: 50px;
+.nav-button:hover {
+  color: #000;
 }
