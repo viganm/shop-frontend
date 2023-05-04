@@ -2,7 +2,7 @@
 
 import Navbar from "./components/UI/Navbar";
 
-import Landing from "./pages/langing/landing";
+import Landing from "./pages/langing/Landing";
 import Shop from "./pages/shop/Shop";
 import About from "./pages/about/About";
 import Login from "./pages/auth/Login";

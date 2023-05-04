@@ -1,5 +1,6 @@
 import React from "react";
 import "./Item.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import Card from "../UI/Card";
 
@@ -15,7 +16,12 @@ const Item = (props) => {
           <h2>{props.product_name}</h2>
           <div className="item__price">${props.product_price}</div>
         </div>
-        <button onClick={clickHandler}>Buy</button>
+        <div className="fav__buttons">
+          <button onClick={clickHandler}>Buy</button>
+          <button onClick={clickHandler} className="favorite__button">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
       </Card>
     </div>
   );
