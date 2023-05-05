@@ -7,11 +7,11 @@ import Shop from "./pages/shop/Shop";
 import About from "./pages/about/About";
 import Login from "./pages/auth/Login";
 import ShoppingCart from "./pages/shop/ShoppingCart";
+// import ProductManagement from "./pages/management/ProductManagement";
 
-ShoppingCart;
+import AddProductForm from "./components/ProductManagment/AddProductsForm";
 
 function App() {
-  console.log(window.location);
   let Component;
   switch (window.location.pathname) {
     case "/":
@@ -28,6 +28,11 @@ function App() {
       break;
     case "/cart":
       Component = ShoppingCart;
+      break;
+    case "/product":
+      Component = AddProductForm;
+      break;
+    default:
       break;
   }
   return (

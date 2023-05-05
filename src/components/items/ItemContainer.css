@@ -14,7 +14,7 @@
   margin-top: 10px;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .expenses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
