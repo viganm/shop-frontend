@@ -34,19 +34,20 @@ const Item = (props) => {
   return (
     <div className="item" key={props.product_id}>
       <Card className="item-card">
+        {imageUrl ? (
+          <img
+            className="item__image"
+            src={`data:image;base64,${props.product_image}`}
+            onError={handleImageError}
+            alt={props.product_name}
+          />
+        ) : (
+          <div>Loading Image...</div>
+        )}
         <div className="item__description">
           <h2>{props.product_name}</h2>
           <div className="item__price">${props.product_price}</div>
         </div>
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt={props.product_name}
-            onError={handleImageError}
-          />
-        ) : (
-          <div>No image...</div>
-        )}
         <div className="fav__buttons">
           <button onClick={clickHandler}>Buy</button>
           <button onClick={clickHandler} className="favorite__button">

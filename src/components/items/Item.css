@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
-  width: 30vh;
+  height: 40vh;
+  width: 40vh;
   font-family: "Helvetica Neue", sans-serif;
   min-width: 250px;
   min-height: 250px;
@@ -18,8 +18,8 @@
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   background-color: #fff;
-  height: 30vh;
-  width: 30vh;
+  height: 50vh;
+  width: 50vh;
   min-width: 250px;
   min-height: 250px;
 }
@@ -36,6 +36,7 @@
   margin-bottom: 0.5rem;
   text-align: center;
   flex: 1 1 auto;
+  margin-bottom: 0%;
 }
 
 .item__price {
@@ -44,6 +45,12 @@
   color: #999;
   margin-bottom: 1rem;
   flex: 1 1 auto;
+  margin-bottom: 0%;
+}
+
+.item__image {
+  width: auto;
+  height: 70%;
 }
 
 button {
@@ -54,6 +61,7 @@ button {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  margin-top: 0%;
 }
 
 button:hover {
@@ -72,4 +80,10 @@ button:hover {
 
 .fav__buttons button {
   margin: 0.2rem;
+}
+
+@media screen and (max-width: 844px) {
+  .item__image {
+    height: 50%;
+  }
 }
