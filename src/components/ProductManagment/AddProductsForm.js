@@ -8,33 +8,33 @@ const AddProductForm = () => {
   const [productCategoryId, setProductCategoryId] = useState("");
   const [productImage, setProductImage] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // convert image file to bytea
+    // convert image file to base64
     const reader = new FileReader();
-    reader.readAsArrayBuffer(productImage);
-    reader.onload = () => {
-      const bytea = new Uint8Array(reader.result);
+    reader.readAsDataURL(productImage);
+    reader.onload = async () => {
+      const base64Image = reader.result.split(",")[1]; // extract base64 data from the result
 
-      console.log(typeof readAsArrayBuffer);
       // create data object to send to server
       const data = {
         productName: productName,
         productPrice: productPrice,
         productCategoryId: productCategoryId,
-        productImage: bytea,
+        productImage: base64Image,
       };
 
-      axios
-        .post("http://localhost:3001/product", data)
-        .then((response) => {
-          console.log("Product added successfully", response.data);
-          console.log(response);
-        })
-        .catch((error) => {
-          console.error("Error adding product", error);
-        });
+      try {
+        const response = await axios.post(
+          "http://localhost:3001/product",
+          data
+        );
+        console.log("Product added successfully", response.data);
+        console.log(response);
+      } catch (error) {
+        console.error("Error adding product", error);
+      }
     };
   };
 
