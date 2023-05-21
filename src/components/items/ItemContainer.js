@@ -8,7 +8,7 @@ const ItemContainer = (props) => {
     <Card className="expenses">
       {props.products.map((products) => (
         <Item
-          product_image={products.product_image}
+          product_image={products.image}
           product_name={products.product_name}
           product_price={products.product_price}
           key={products.product_id}
