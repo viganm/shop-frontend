@@ -22,12 +22,13 @@ const Login = () => {
         body: JSON.stringify(loginData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        const token = response.headers.get("Authorization");
-        localStorage.setItem("authorization", token);
-        console.log("Login successful!");
+        const token = data.token;
+        localStorage.setItem("token", token);
       } else {
-        console.log("Login failed!");
+        console.error("Error:", data.error);
       }
     } catch (error) {
       console.error("Error:", error);
