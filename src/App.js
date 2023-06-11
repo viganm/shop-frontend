@@ -1,6 +1,7 @@
 // import React, { useState, useEffect } from "react";
 
 import Navbar from "./components/UI/Navbar";
+import Footer from "./components/UI/Footer";
 
 import Landing from "./pages/langing/Landing";
 import Shop from "./pages/shop/Shop";
@@ -35,11 +36,17 @@ function App() {
     default:
       break;
   }
+  const componentStyle = {
+    minHeight: "1100px",
+  };
   return (
     <div>
       <>
         <Navbar />
-        <Component />
+        <div style={componentStyle}>
+          <Component />
+        </div>
+        <Footer />
       </>
     </div>
   );
