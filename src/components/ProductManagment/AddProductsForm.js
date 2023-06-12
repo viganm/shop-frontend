@@ -28,7 +28,12 @@ const AddProductForm = () => {
       try {
         const response = await axios.post(
           "http://localhost:3001/product",
-          data
+          data,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         );
         console.log("Product added successfully", response.data);
         console.log(response);
