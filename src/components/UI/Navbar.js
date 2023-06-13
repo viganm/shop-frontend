@@ -45,6 +45,8 @@ const Navbar = () => {
             About
           </a>
         </li>
+      </ul>
+      <ul className={`nav-links right ${menuOpen ? "active" : ""}`}>
         <li>
           <a href="/cart" onClick={handleMenuToggle}>
             <i className="fas fa-shopping-cart"></i>
