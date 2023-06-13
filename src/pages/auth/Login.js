@@ -27,6 +27,7 @@ const Login = () => {
       if (response.ok) {
         const token = data.token;
         localStorage.setItem("token", token);
+        document.getElementById("shopLink").click();
       } else {
         console.error("Error:", data.error);
       }
@@ -56,6 +57,9 @@ const Login = () => {
       </label>
       <br />
       <button type="submit">Login</button>
+      <a id="shopLink" href="/shop" style={{ display: "none" }}>
+        Shop
+      </a>
     </form>
   );
 };
