@@ -1,6 +1,6 @@
 form {
   max-width: 300px;
-  margin: 0 auto;
+  margin: 100px auto;
   padding: 20px;
   background-color: #f4f4f4;
   border: 1px solid #ccc;
@@ -16,7 +16,7 @@ label {
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 115%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
