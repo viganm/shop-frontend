@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Item.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Card from "../UI/Card";
+import { CartContext } from "../../CartContext";
 
 const Item = (props) => {
+  const { product_id, product_name } = props;
   const [imageUrl, setImageUrl] = useState("");
+  const { addToCart } = useContext(CartContext);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     if (!props.product_image) {
@@ -24,7 +28,12 @@ const Item = (props) => {
   }, [props.product_image]);
 
   const clickHandler = () => {
-    console.log("BUY");
+    addToCart({ product_id, product_name });
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 5000);
+    console.log(product_id);
   };
 
   const handleImageError = (event) => {
@@ -49,12 +58,22 @@ const Item = (props) => {
           <div className="item__price">${props.product_price}</div>
         </div>
         <div className="fav__buttons">
-          <button onClick={clickHandler}>Buy</button>
-          <button onClick={clickHandler} className="favorite__button">
+          <button type="button" onClick={clickHandler}>
+            Buy
+          </button>
+          <button className="favorite__button">
             <i className="fa-solid fa-heart"></i>
           </button>
         </div>
       </Card>
+      {showMessage && (
+        <div className="message-popup">
+          <div className="message-popup__content">
+            <i className="fas fa-check-circle"></i>
+            <p>Item added to cart!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

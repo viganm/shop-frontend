@@ -11,6 +11,7 @@ const ItemContainer = (props) => {
           product_image={products.image}
           product_name={products.product_name}
           product_price={products.product_price}
+          product_id={products.product_id}
           key={products.product_id}
         />
       ))}
