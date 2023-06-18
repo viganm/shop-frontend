@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import { CartContext } from "../../CartContext";
 
 const Item = (props) => {
-  const { product_id, product_name } = props;
+  const { product_id } = props;
   const [imageUrl, setImageUrl] = useState("");
   const { addToCart } = useContext(CartContext);
   const [showMessage, setShowMessage] = useState(false);
@@ -28,7 +28,7 @@ const Item = (props) => {
   }, [props.product_image]);
 
   const clickHandler = () => {
-    addToCart({ product_id, product_name });
+    addToCart({ product_id });
     setShowMessage(true);
     setTimeout(() => {
       setShowMessage(false);
