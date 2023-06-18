@@ -1,3 +1,8 @@
+.cart {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -35,14 +40,15 @@ h1 {
 }
 
 .checkout-btn {
-  display: block;
-  width: 100%;
+  width: 30%;
   padding: 10px;
   background-color: #4caf50;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
 .checkout-btn:hover {

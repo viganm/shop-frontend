@@ -26,7 +26,9 @@ const Login = () => {
 
       if (response.ok) {
         const token = data.token;
+        const personId = data.person_id;
         localStorage.setItem("token", token);
+        localStorage.setItem("personId", personId);
         document.getElementById("shopLink").click();
       } else {
         console.error("Error:", data.error);
