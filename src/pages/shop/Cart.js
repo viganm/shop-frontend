@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Cart.css";
+import ItemContainerCart from "../../components/items/ItemContainerCart";
 
 const Cart = ({ cartItems }) => {
+  const [items, setItems] = useState([]);
   const [address, setAddress] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [city, setCity] = useState("");
@@ -20,7 +22,30 @@ const Cart = ({ cartItems }) => {
     personId: personId,
   };
 
-  console.log(data);
+  const getProducts = async () => {
+    try {
+      const requests = productIds.map(async (productId) => {
+        const res = await axios.get(
+          `http://localhost:3001/products-by-id/${productId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        return res.data.product;
+      });
+
+      const products = await Promise.all(requests);
+      setItems(products);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   const checkOut = async () => {
     try {
@@ -30,7 +55,6 @@ const Cart = ({ cartItems }) => {
         },
       });
       console.log("Product added successfully", response.data);
-      console.log(response);
       localStorage.removeItem("cartItems");
       document.getElementById("shopLink").click();
     } catch (error) {
@@ -40,18 +64,15 @@ const Cart = ({ cartItems }) => {
 
   return (
     <div className="cart">
-      <h2>Shopping Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <div>
+          <h2>Shopping Cart</h2>
+          <p>Your cart is empty.</p>
+        </div>
       ) : (
         <>
-          {cartItems.map((item) => (
-            <div key={item.product_id}>
-              <h4>{item.product_name}</h4>
-              <p>Price: €{item.product_price}</p>
-              <p>{item.product_id}</p>
-            </div>
-          ))}
+          {items ? <ItemContainerCart products={items} /> : <p>Loading...</p>}
+
           <form>
             <div className="address">
               <label htmlFor="address">Address</label>
@@ -64,7 +85,7 @@ const Cart = ({ cartItems }) => {
             </div>
 
             <div className="postalCode">
-              <label htmlFor="postalCode">postal Code</label>
+              <label htmlFor="postalCode">Postal Code</label>
               <input
                 type="text"
                 id="postalCode"
