@@ -1,0 +1,48 @@
+.expenses-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "Helvetica Neue", sans-serif;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.item-cart {
+  flex-basis: 23%;
+  margin-top: 10px;
+}
+
+/* @media screen and (max-width: 1600px) {
+    .expenses {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: senter;
+    }
+  } */
+
+@media screen and (max-width: 1600px) {
+  .item {
+    margin-left: 50px;
+    margin-top: 30%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .item {
+    width: 80%;
+    height: 100%;
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .item {
+    margin-left: 5%;
+    margin-bottom: 2rem;
+    margin-top: 3%;
+  }
+}
