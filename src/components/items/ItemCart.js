@@ -7,6 +7,7 @@ const ItemCart = (props) => {
   const { product_id } = props;
   const [imageUrl, setImageUrl] = useState("");
   const [showMessage, setShowMessage] = useState(false);
+  const storedCartItems = localStorage.getItem("cartItems");
 
   useEffect(() => {
     if (!props.product_image) {
@@ -25,7 +26,14 @@ const ItemCart = (props) => {
     reader.readAsDataURL(blob);
   }, [props.product_image]);
 
-  const clickHandler = () => {};
+  const onDelete = () => {
+    let filteredItems = JSON.parse(storedCartItems).filter(
+      (item) => item.product_id !== product_id
+    );
+
+    localStorage.setItem("cartItems", JSON.stringify(filteredItems));
+    window.location.reload();
+  };
 
   const handleImageError = (event) => {
     console.log("Error loading image:", event.target.src);
@@ -49,7 +57,10 @@ const ItemCart = (props) => {
           <div className="item__price-cart">${props.product_price}</div>
         </div>
         <div className="fav__buttons-cart">
-          <button className="favorite__button-cart" onClick={clickHandler}>
+          <button
+            className="favorite__button-cart"
+            onClick={() => onDelete(product_id)}
+          >
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>

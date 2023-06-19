@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [personEmail, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,7 +31,7 @@ const Login = () => {
         const personId = data.person_id;
         localStorage.setItem("token", token);
         localStorage.setItem("personId", personId);
-        document.getElementById("shopLink").click();
+        navigate("/shop");
       } else {
         console.error("Error:", data.error);
       }
@@ -59,9 +61,6 @@ const Login = () => {
       </label>
       <br />
       <button type="submit">Login</button>
-      <a id="shopLink" href="/shop" style={{ display: "none" }}>
-        Shop
-      </a>
     </form>
   );
 };

@@ -12,6 +12,7 @@ const Cart = ({ cartItems }) => {
 
   const productIds = cartItems.map((item) => item.product_id);
   const personId = localStorage.getItem("personId");
+  const cartItemsLocalStorage = localStorage.getItem("cartItems");
 
   const data = {
     address: address,
@@ -38,6 +39,7 @@ const Cart = ({ cartItems }) => {
 
       const products = await Promise.all(requests);
       setItems(products);
+      return products;
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -45,7 +47,7 @@ const Cart = ({ cartItems }) => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [cartItemsLocalStorage]);
 
   const checkOut = async () => {
     try {

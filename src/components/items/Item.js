@@ -33,7 +33,6 @@ const Item = (props) => {
     setTimeout(() => {
       setShowMessage(false);
     }, 5000);
-    console.log(product_id);
   };
 
   const handleImageError = (event) => {

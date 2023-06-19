@@ -8,6 +8,7 @@ import Login from "./pages/auth/Login";
 import Cart from "./pages/shop/Cart";
 import AddProductForm from "./components/ProductManagment/AddProductsForm";
 import { CartContext } from "./CartContext";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -27,30 +28,6 @@ function App() {
     setCartItems([...cartItems, item]);
   };
 
-  let Component;
-  switch (window.location.pathname) {
-    case "/":
-      Component = Landing;
-      break;
-    case "/shop":
-      Component = () => <Shop addToCart={addToCart} />;
-      break;
-    case "/about":
-      Component = About;
-      break;
-    case "/login":
-      Component = Login;
-      break;
-    case "/cart":
-      Component = () => <Cart cartItems={cartItems} />;
-      break;
-    case "/product":
-      Component = AddProductForm;
-      break;
-    default:
-      break;
-  }
-
   const componentStyle = {
     minHeight: "1100px",
   };
@@ -61,11 +38,20 @@ function App() {
         <Navbar />
         <div style={componentStyle}>
           <CartContext.Provider value={{ addToCart }}>
-            {typeof Component === "function" ? (
+            {/* {typeof Component === "function" ? (
               <Component />
             ) : (
               <Component cartItems={cartItems} addToCart={addToCart} />
-            )}
+            )} */}
+            <Routes>
+              <Route path="/" element={<Landing />}></Route>
+              <Route path="/shop" element={<Shop addToCart={addToCart} />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+              <Route path="/product" element={<AddProductForm />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+            <Outlet />
           </CartContext.Provider>
         </div>
         <Footer />

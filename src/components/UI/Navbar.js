@@ -5,6 +5,7 @@ import logo from "../../img/LOGO.jpg";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navbarRef = useRef(null);
+  const isLoggedIn = localStorage.getItem("token");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -22,6 +23,10 @@ const Navbar = () => {
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
   };
 
   return (
@@ -53,9 +58,15 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <a href="/login" onClick={handleMenuToggle}>
-            Login
-          </a>
+          {isLoggedIn ? (
+            <a href="/login" onClick={() => handleLogout()}>
+              Logout
+            </a>
+          ) : (
+            <a href="/login" onClick={handleMenuToggle}>
+              Login
+            </a>
+          )}
         </li>
       </ul>
     </div>
