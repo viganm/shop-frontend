@@ -25,14 +25,14 @@
 
 @media screen and (max-width: 1600px) {
   .expenses {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .item {
-    margin-left: 50px;
-    margin-top: 30%;
+    margin-top: 80px;
   }
 }
 
@@ -50,7 +50,7 @@
     height: 100%;
     flex-basis: 100%;
     margin-bottom: 2rem;
-    margin-top: 20%;
+    margin-top: 2rem;
   }
 }
 
@@ -66,6 +66,5 @@
   .item {
     margin-left: 5%;
     margin-bottom: 2rem;
-    margin-top: 3%;
   }
 }

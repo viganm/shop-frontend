@@ -34,7 +34,7 @@
 }
 
 .nav-links a {
-  color: #7a7979;
+  color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -126,7 +126,9 @@ img {
     transition: all 0.3s ease-in;
     z-index: 1;
   }
-
+  .nav-links-mobile ul {
+    margin: 1000px;
+  }
   .nav-links-mobile {
     display: flex;
     flex-direction: column;

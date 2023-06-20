@@ -42,19 +42,21 @@ const ItemCart = (props) => {
   return (
     <div className="item-cart" key={props.product_id}>
       <div className="item-card-cart">
-        {imageUrl ? (
-          <img
-            className="item__image-cart"
-            src={`data:image;base64,${props.product_image}`}
-            onError={handleImageError}
-            alt={props.product_name}
-          />
-        ) : (
-          <div>Loading Image...</div>
-        )}
-        <div className="item__description-cart">
-          <h2>{props.product_name}</h2>
-          <div className="item__price-cart">${props.product_price}</div>
+        <div className="product-info">
+          {imageUrl ? (
+            <img
+              className="item__image-cart"
+              src={`data:image;base64,${props.product_image}`}
+              onError={handleImageError}
+              alt={props.product_name}
+            />
+          ) : (
+            <div>Loading Image...</div>
+          )}
+          <div className="item__description-cart">
+            <h2>{props.product_name}</h2>
+            <div className="item__price-cart">${props.product_price}</div>
+          </div>
         </div>
         <div className="fav__buttons-cart">
           <button

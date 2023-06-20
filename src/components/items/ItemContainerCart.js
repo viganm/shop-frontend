@@ -6,7 +6,7 @@ import "./ItemContainerCart.css";
 const ItemContainerCart = (props) => {
   return (
     <Card className="expenses-cart">
-      <h2>Shopping Cart</h2>
+      <h2 className="shopping-cart-title">Shopping Cart</h2>
       {props.products.map((product) => (
         <ItemCart
           product_image={product[0].image}

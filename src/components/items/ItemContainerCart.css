@@ -14,6 +14,11 @@
   margin-top: 10px;
 }
 
+.shopping-cart-title {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+}
 /* @media screen and (max-width: 1600px) {
     .expenses {
       display: grid;
@@ -22,12 +27,12 @@
     }
   } */
 
-@media screen and (max-width: 1600px) {
+/* @media screen and (max-width: 1600px) {
   .item {
     margin-left: 50px;
     margin-top: 30%;
   }
-}
+} */
 
 @media screen and (max-width: 1000px) {
   .item {
@@ -35,7 +40,6 @@
     height: 100%;
     flex-basis: 100%;
     margin-bottom: 2rem;
-    margin-top: 20%;
   }
 }
 

@@ -2,6 +2,9 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  background: transparent;
+  border: none;
 }
 
 input[type="text"],
@@ -21,9 +24,11 @@ input[type="file"] {
 
 label {
   font-size: 14px;
-  font-weight: bold;
   margin-bottom: 4px;
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 button[type="submit"] {

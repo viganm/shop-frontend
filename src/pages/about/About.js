@@ -2,7 +2,7 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container about">
       <h1>About</h1>
       <p>
         Kimete Mustafa is a highly skilled fashion designer based in Prishtina,

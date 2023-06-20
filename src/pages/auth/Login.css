@@ -11,16 +11,16 @@ form {
 
 label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 115%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
   border-radius: 3px;
+  border: 1px solid #ccc;
 }
 
 button[type="submit"] {
@@ -49,4 +49,8 @@ button[type="submit"]:hover {
 .error {
   color: red;
   margin-top: 10px;
+}
+
+body {
+  margin: 0 !important;
 }

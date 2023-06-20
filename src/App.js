@@ -28,15 +28,11 @@ function App() {
     setCartItems([...cartItems, item]);
   };
 
-  const componentStyle = {
-    minHeight: "1100px",
-  };
-
   return (
     <div>
       <>
         <Navbar />
-        <div style={componentStyle}>
+        <div>
           <CartContext.Provider value={{ addToCart }}>
             {/* {typeof Component === "function" ? (
               <Component />
