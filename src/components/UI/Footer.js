@@ -21,6 +21,9 @@ const Footer = () => {
               <li>
                 <a href="/contact">Contact</a>
               </li>
+              <li>
+                <a href="/return">Return Policy</a>
+              </li>
             </ul>
             <div className="social-icons">
               <a

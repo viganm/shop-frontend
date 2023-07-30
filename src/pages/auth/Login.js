@@ -32,6 +32,7 @@ const Login = () => {
         localStorage.setItem("token", token);
         localStorage.setItem("personId", personId);
         navigate("/shop");
+        window.location.reload(false);
       } else {
         console.error("Error:", data.error);
       }
@@ -41,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login_form">
       <h3>Log in</h3>
       <label>Email:</label>
       <input

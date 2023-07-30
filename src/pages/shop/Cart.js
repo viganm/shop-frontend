@@ -49,7 +49,7 @@ const Cart = ({ cartItems }) => {
     getProducts();
   }, [cartItemsLocalStorage]);
 
-  const checkOut = async () => {
+  const payment = async () => {
     try {
       const response = await axios.post("http://localhost:3001/order", data, {
         headers: {
@@ -116,8 +116,8 @@ const Cart = ({ cartItems }) => {
               />
             </div>
           </form>
-          <button onClick={checkOut} className="checkout-btn">
-            Check Out
+          <button onClick={payment} className="checkout-btn">
+            Payment
           </button>
         </>
       )}
