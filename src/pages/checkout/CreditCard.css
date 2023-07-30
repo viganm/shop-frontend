@@ -1,0 +1,18 @@
+.form_credit_card {
+  width: 500px;
+}
+.container_credit_card {
+  width: 1000px;
+  height: 1000px;
+}
+label {
+  display: block;
+  margin-bottom: 20px;
+}
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}

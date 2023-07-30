@@ -7,6 +7,9 @@ import About from "./pages/about/About";
 import Login from "./pages/auth/Login";
 import Cart from "./pages/shop/Cart";
 import AddProductForm from "./components/ProductManagment/AddProductsForm";
+import Checkout from "./pages/checkout/Checkout";
+import Return from "./pages/about/Return";
+
 import { CartContext } from "./CartContext";
 import { Outlet, Route, Routes } from "react-router-dom";
 
@@ -34,11 +37,6 @@ function App() {
         <Navbar />
         <div>
           <CartContext.Provider value={{ addToCart }}>
-            {/* {typeof Component === "function" ? (
-              <Component />
-            ) : (
-              <Component cartItems={cartItems} addToCart={addToCart} />
-            )} */}
             <Routes>
               <Route path="/" element={<Landing />}></Route>
               <Route path="/shop" element={<Shop addToCart={addToCart} />} />
@@ -46,6 +44,8 @@ function App() {
               <Route path="/cart" element={<Cart cartItems={cartItems} />} />
               <Route path="/product" element={<AddProductForm />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/return" element={<Return />} />
             </Routes>
             <Outlet />
           </CartContext.Provider>
