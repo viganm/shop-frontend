@@ -9,7 +9,6 @@ import Cart from "./pages/shop/Cart";
 import AddProductForm from "./components/ProductManagment/AddProductsForm";
 import Checkout from "./pages/checkout/Checkout";
 import Return from "./pages/about/Return";
-
 import { CartContext } from "./CartContext";
 import { Outlet, Route, Routes } from "react-router-dom";
 
