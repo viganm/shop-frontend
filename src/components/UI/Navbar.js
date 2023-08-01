@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
-import logo from "../../img/LOGO.jpg";
+import logo from "../../img/logo-transparent.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,15 +31,15 @@ const Navbar = () => {
 
   return (
     <div className={`navbar ${menuOpen ? "active" : ""}`} ref={navbarRef}>
+            <div className="logo">
+          <a href="#" onClick={handleMenuToggle}>
+            <img src={logo} alt="Logo" />
+          </a>
+        </div>
       <div className="menu-toggle" onClick={handleMenuToggle}>
         <i className="fas fa-bars"></i>
       </div>
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <li>
-          <a href="/" onClick={handleMenuToggle}>
-            <img src={logo} alt="Logo" />
-          </a>
-        </li>
         <li>
           <a href="/shop" onClick={handleMenuToggle}>
             Shop
@@ -50,11 +50,9 @@ const Navbar = () => {
             About
           </a>
         </li>
-      </ul>
-      <ul className={`nav-links right ${menuOpen ? "active" : ""}`}>
         <li>
           <a href="/cart" onClick={handleMenuToggle}>
-            <i className="fas fa-shopping-cart"></i>
+            Cart
           </a>
         </li>
         <li>
