@@ -31,11 +31,11 @@ const Navbar = () => {
 
   return (
     <div className={`navbar ${menuOpen ? "active" : ""}`} ref={navbarRef}>
-            <li className="logo">
+            <div className="logo">
           <a href="#" onClick={handleMenuToggle}>
             <img src={logo} alt="Logo" />
           </a>
-        </li>
+        </div>
       <div className="menu-toggle" onClick={handleMenuToggle}>
         <i className="fas fa-bars"></i>
       </div>
