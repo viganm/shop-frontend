@@ -7,7 +7,7 @@ const Landing = () => {
       className="landing_page"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div>
+      <div className="change">
         <a href="/shop" className="centered_buy">
           <button className="buy_now_button">Buy Now</button>
         </a>
