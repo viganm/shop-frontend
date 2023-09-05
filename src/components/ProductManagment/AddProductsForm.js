@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AddProductsForm.css";
+import dotenv from "dotenv";
 
 const AddProductForm = () => {
   const [productName, setProductName] = useState("");
@@ -26,15 +27,11 @@ const AddProductForm = () => {
       };
 
       try {
-        const response = await axios.post(
-          "http://localhost:3001/product",
-          data,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        );
+        const response = await axios.post(process.env.ENV + "/product", data, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         console.log("Product added successfully", response.data);
       } catch (error) {
         console.error("Error adding product", error);

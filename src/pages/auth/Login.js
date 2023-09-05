@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import dotenv from "dotenv";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3001/login", {
+      const response = await fetch(process.env.ENV + "/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
