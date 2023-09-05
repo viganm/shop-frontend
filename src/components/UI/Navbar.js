@@ -36,24 +36,20 @@ const Navbar = () => {
       </div>
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li>
-          <a href="/" onClick={handleMenuToggle}>
+          <a href="/">
             <img src={logo} alt="Logo" />
           </a>
         </li>
         <li>
-          <a href="/shop" onClick={handleMenuToggle}>
-            Shop
-          </a>
+          <a href="/shop">Shop</a>
         </li>
         <li>
-          <a href="/about" onClick={handleMenuToggle}>
-            About
-          </a>
+          <a href="/about">About</a>
         </li>
       </ul>
       <ul className={`nav-links right ${menuOpen ? "active" : ""}`}>
         <li>
-          <a href="/cart" onClick={handleMenuToggle}>
+          <a href="/cart">
             <i className="fas fa-shopping-cart"></i>
           </a>
         </li>
@@ -63,9 +59,7 @@ const Navbar = () => {
               Logout
             </a>
           ) : (
-            <a href="/login" onClick={handleMenuToggle}>
-              Login
-            </a>
+            <a href="/login">Login</a>
           )}
         </li>
       </ul>
