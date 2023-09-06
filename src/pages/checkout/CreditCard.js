@@ -1,8 +1,6 @@
 import "./CreditCard.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import dotenv from "dotenv";
-
 const CreditCard = () => {
   const navigate = useNavigate();
   const [creditCardNumber, setCreditCardNumber] = useState("");
@@ -21,7 +19,7 @@ const CreditCard = () => {
     };
 
     try {
-      const response = await fetch(process.env.ENV + "/checkout", {
+      const response = await fetch(`${process.env.REACT_APP_ENV}/checkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

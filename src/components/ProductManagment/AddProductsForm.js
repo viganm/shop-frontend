@@ -27,11 +27,15 @@ const AddProductForm = () => {
       };
 
       try {
-        const response = await axios.post(process.env.ENV + "/product", data, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        const response = await axios.post(
+          `${process.env.REACT_APP_ENV}/product`,
+          data,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         console.log("Product added successfully", response.data);
       } catch (error) {
         console.error("Error adding product", error);

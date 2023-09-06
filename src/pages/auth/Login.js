@@ -17,7 +17,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch(process.env.ENV + "/login", {
+      const response = await fetch(`${process.env.REACT_APP_ENV}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

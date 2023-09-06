@@ -27,7 +27,7 @@ const Cart = ({ cartItems }) => {
     try {
       const requests = productIds.map(async (productId) => {
         const res = await axios.get(
-          `http://localhost:3001/products-by-id/${productId}`,
+          `${process.env.REACT_APP_ENV}/products-by-id/${productId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -51,11 +51,15 @@ const Cart = ({ cartItems }) => {
 
   const payment = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/order", data, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_ENV}/order`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log("Product added successfully", response.data);
       localStorage.removeItem("cartItems");
       document.getElementById("shopLink").click();
