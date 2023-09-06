@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AddProductsForm.css";
-import dotenv from "dotenv";
 
 const AddProductForm = () => {
   const [productName, setProductName] = useState("");

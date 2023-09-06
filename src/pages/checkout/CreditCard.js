@@ -1,6 +1,7 @@
 import "./CreditCard.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 const CreditCard = () => {
   const navigate = useNavigate();
   const [creditCardNumber, setCreditCardNumber] = useState("");
