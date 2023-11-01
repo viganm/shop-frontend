@@ -1,6 +1,6 @@
 .landing_page {
-  position: absolute;
-  height: 100%;
+  position: relative;
+  height: 100vh;
   width: 100%;
   margin: 0 auto;
   background-position: center;
@@ -8,46 +8,65 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Ubuntu";
 }
 
-.landing_page button {
+.background_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper button {
   background-color: transparent;
   border: solid;
   border-color: rgb(250, 250, 250);
-  height: 200%;
-  width: 300%;
-  border-width: 7px;
-  font-size: 299%;
-  font-size: 300%;
+  border-width: 2px;
+  font-weight: 100;
 }
 
-.landing_page button:hover {
-  filter: blur(1.5px);
-  border: solid;
-  border-color: rgb(250, 250, 250);
-  height: 200%;
-  width: 300%;
-  border-width: 7px;
-  background-color: transparent;
+.wrapper button:hover {
+  background-color: black;
+  border: none;
+  font-weight: 600;
 }
 
-a {
+.buy_now_button a {
   text-decoration: none;
   color: rgb(250, 250, 250);
 }
 
 .centered_buy {
+  z-index: 99;
+}
+.Landing-Title {
+  font-family: "ubuntu";
+  color: #fff;
+  font-size: 5rem;
+  z-index: 99;
+}
+
+.wrapper {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  gap: 40px;
+  flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  position: absolute;
+  z-index: 99;
+  margin: auto;
 }
 
 @media screen and (max-width: 844px) {
   .landing_page button {
     height: 100%;
     width: 200%;
-    font-size: 150%;
   }
 
   .landing_page button:hover {
@@ -55,7 +74,6 @@ a {
     width: 300%;
   }
 }
-
 ::-webkit-scrollbar {
   display: none;
 }
